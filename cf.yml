@@ -1,0 +1,57 @@
+AWSTemplateFormatVersion : 2010-09-09
+Description: SQL Admin Server by chang.li3@treasury.gov
+Parameters:
+  Ami:
+    Type: String
+    Default: ami-43a15f3e
+    Description: Please provide an AWS Ubuntu image id
+  InstanceTypeParameter:
+    Type: String
+    Default: t2.medium
+  InstanceSubnet:
+    Type: String
+    Default: subnet-2b976000
+  SecurityGroupId:
+    Type: String
+    Default: sg-58e1fc3d
+  InstanceKeyPairParameter:
+    Type: String
+    Default: TreaEBSLab
+    Description: Name of the KeyPair you choose to use to ssh into the box    
+  mysqlRootPassword:
+    Type: String
+    Default: mysqlRootPassword
+
+Resources:
+  SQLAdminServer:
+    Type: AWS::EC2::Instance
+    Properties:
+      ImageId:
+        Ref: Ami
+      KeyName:
+        Ref: InstanceKeyPairParameter
+      InstanceType:
+        Ref: InstanceTypeParameter
+      SecurityGroupIds:
+        - !Ref SecurityGroupId
+      SubnetId:
+        Ref: InstanceSubnet
+      Tags:
+        -
+          Key: Name
+          Value: SQLAdmin Server on LAMP
+      UserData:
+        Fn::Base64: !Sub |
+          #!/bin/bash -xe
+          curl -s -L https://raw.githubusercontent.com/changli3/LAMP-SQL-ADMIN/master/install.sh | sudo bash -s ${mysqlRootPassword}
+Outputs:
+  SQLAdminServer:
+    Description: The web front URL to view the SQLAdminServer
+    Value:
+      Fn::Join:
+      - ''
+      - - http://
+        - Fn::GetAtt:
+          - SQLAdminServer
+          - PrivateIp
+        - '/sqladmin'
