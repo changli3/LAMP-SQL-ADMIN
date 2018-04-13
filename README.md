@@ -22,3 +22,27 @@ Features
 - UI Themes supported
 - Other Datbaase tools (e.g. repair tables, alter indexes)
 
+Launch SQL Admin Server
+==================================
+```
+git clone https://github.com/changli3/LAMP-SQL-ADMIN.git
+
+cd LAMP-SQL-ADMIN
+
+aws cloudformation deploy --stack-name AdminSvr01 --parameter-overrides \
+	Ami=ami-43a15f3e  \
+    InstanceTypeParameter=t2.small \
+    InstanceSubnet=subnet-2b976000 \
+    SecurityGroupId=sg-58e1fc3d \
+    InstanceKeyPairParameter=TreaEBSLab \
+    mysqlRootPassword=mysqlRootPassword \
+    --template-file cf.yml
+```
+
+Once the server start, go to http://PRIVATE-IP/sqladmin and login as root and the provided mysqlRootPassword.
+
+#### Login Screen
+![Login Screen](https://raw.githubusercontent.com/changli3/LAMP-SQL-ADMIN/master/login.png "Login Screen")
+
+#### SQL Admin UI
+![SQL Admin UI](https://raw.githubusercontent.com/changli3/LAMP-SQL-ADMIN/master/sqlui.png "SQL Admin UI")
