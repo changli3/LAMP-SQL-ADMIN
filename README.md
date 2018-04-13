@@ -22,5 +22,3 @@ Features
 - UI Themes supported
 - Other Datbaase tools (e.g. repair tables, alter indexes)
 
-Contributing Code
-=================
