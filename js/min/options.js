@@ -21,6 +21,3 @@ function helpCheckUpdates(){$("#main_header .updates").html(__("Check for Update
 function setPreference(a,b){data="x=1&"+escape(a)+"="+escape(b);$.ajax({type:"GET",url:"?",data:data,success:function(a){window.location=window.location},dataType:"html"})}function toolsOptions(){taskbar.openModal("tools-options","?q=wrkfrm&type=options",500,300)}function toolsDbManager(){taskbar.openDialog("db-manager","?q=wrkfrm&type=databases",600,440)}function toolsProcManager(){taskbar.openDialog("tools-proc","?q=wrkfrm&type=processes",560,380)}
 function toolsDbCheck(){taskbar.openDialog("tools-check","?q=wrkfrm&type=dbrepair",600,420)}function toolsDbSearch(){taskbar.openDialog("tools-search","?q=wrkfrm&type=search",620,450)}function toolsUsers(){taskbar.openDialog("tools-users","?q=wrkfrm&type=usermanager",620,440)}function infoDefault(){$("#screen-wait").remove();wrkfrmSubmit("info","","","")}function infoServer(){wrkfrmSubmit("infoserver","","","")}function infoVariables(){wrkfrmSubmit("infovars","","","")}
 function infoDatabase(){wrkfrmSubmit("infodb","","","")}function navigatePage(a,b){window.location.href="?q=wrkfrm&type="+a+"&p="+b}function copyColumn(a){}function copyText(a){}function sqlFilterText(a){};
-function helpQuickTutorial(){}
-function helpRequestFeature(){}
-function helpCheckUpdates(){};

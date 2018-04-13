@@ -2,7 +2,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=utf-8;" />
-<title>WC2H SQL Admin</title>
+<title>MyWebSQL</title>
 <link rel="SHORTCUT ICON" href="favicon.ico" />
 <style type="text/css">
 * {
@@ -47,13 +47,13 @@ div#bg {
 	-moz-box-shadow: 0 1px 20px 5px rgba(145,145,145,0.6);
 	box-shadow: 0 5px 20px 0px rgba(145,145,145,0.7);
 	width: 460px;
-	height: 320px;
+	height: 370px;
 	overflow: hidden;
 	margin: auto;
 	position: relative;
 }
 div#splash {
-/*	background: url(img/splash.png) 60px 40px no-repeat;*/
+	background: url(img/splash.png) 60px 40px no-repeat;
 	text-align: center;
 }
 
@@ -85,14 +85,15 @@ span.website a:hover {
 }
 
 div.auth {
-	width: 430px;
+	width: 320px;
 	margin: 0 auto;
-	text-align: left;
+	text-align: center;
 	background: transparent;
 	border: 4px double #ECECEC;
 	padding: 4px;
 }
 div.auth div {
+	text-align: center;
 	padding: 4px;
 }
 div.auth label {
@@ -101,21 +102,22 @@ div.auth label {
 }
 
 div.login {
-	margin: 20 80 20 80  auto;
+	margin: 100px auto;
 	font-family: verdana;
 	font-size: 9pt;
 	text-align: center;
 }
 div.msg {
 	position: relative;
-	top: 5px;
+	top: 95px;
 	width: 325px;
 	padding: 2px;
 	margin: 0 auto;
 	color: #cc0000;
+	font-weight: bold;
 	text-align: center;
 }
-#server-name { margin-left: -3px; padding: 3px; }
+#server-name { margin-left: -3px; padding: 3px; width: 100px; }
 #server-type { width: 85px; padding: 2px; vertical-align: top; }
 
 </style>
@@ -126,9 +128,10 @@ div.msg {
 		<tr><td height="100%" valign="middle" align="center" style="text-align:center">
 			<div id="bg">
 			<div id="splash">
-				<span style="font-size:18px"><br/><br/>WC2H SQL Admin Login</br><br/></span>
+				<span class="version"><?php echo __('version'); ?> {{APP_VERSION}}</span>
+				<span class="website"><a target="_blank" href="{{PROJECT_SITEURL}}" title="<?php echo __('Visit Project website'); ?>"><?php echo __('Visit Project website'); ?></a></span>
+				{{MESSAGE}}
 				{{FORM}}
-{{MESSAGE}}
 			</div>
 			</div>
 		</td></tr>

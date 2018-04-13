@@ -1,8 +1,7 @@
 MyWebSQL
 ========
 
-MyWebSQL is a next generation web based application for database administration over the web.
-It has a simple and intuitive interface, quick record addition/editing/saving features and plenty of tools to work with databases.
+This is forked from MyWebSQL. A Cloudformation to install LAMP and then MyWebSQL to access the database on the server side.
 
 Database Support
 ================
@@ -25,5 +24,3 @@ Features
 
 Contributing Code
 =================
-If you would like to contribute features/bugfixes/enhancements to MyWebSQL, you can fork the repo, make your changes and send a pull request.
-Once accepted, your changes will be incorporated in the next release of the applicaton.

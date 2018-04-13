@@ -87,7 +87,7 @@
 <html xmlns="http://www.w3.org/1999/xhtml">
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset='utf-8';" />
-<title>WC2H SQL Admin</title>
+<title>MyWebSQL</title>
 	<link rel="stylesheet" type="text/css" href="cache.php?css=theme,default" />
 	<link rel="SHORTCUT ICON" href="favicon.ico" />
 	<link rel="stylesheet" type="text/css" href="cache.php?css=menu,treeview,results,context,alerts" />
@@ -122,17 +122,10 @@
 
 	<div class="ui-layout-north">
 		<div id="main_header">
+			<a target="_blank" href="<?php echo PROJECT_SITEURL;?>"><img src="img/logo.png" class="logo" alt="MyWebSQL" width="45" height="38" border="0" /></a>
 			<div class="title">
-				<div class="main">WC2H SQL Admin (mySQL / pgSQL)</div>
-        <div>
-
-            <a href="/">Home</a> |
-            <a href="/Wizard">Resource Wizard</a> |
-            <a href="/CustomerStacks">Resource Manager</a> |
-            <a href="#">Resource Scheduler</a> |
-            <a href="/Content/sqladmin/" >WC2H SQLAdmin</a> |
-            <a href="/Utils/S3Admin">WC2H S3Admin</a> 
-        </div>
+				<div class="main">MyWebSQL</div>
+				<div class="version"><?php echo __('version') . ' ' . APP_VERSION; ?></div>
 			</div>
 			<div class="info">
 				<span class="server"><?php echo htmlspecialchars(Session::get('auth', 'server_name', true)); ?></span> - <?php echo htmlspecialchars(Session::get('db', 'version_comment')); ?>&nbsp;<?php echo htmlspecialchars(Session::get('db', 'version_full')); ?><br />

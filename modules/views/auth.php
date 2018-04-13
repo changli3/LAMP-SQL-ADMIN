@@ -1,4 +1,4 @@
-<div class="auth" >
+<div class="auth">
 	<div>
 		<label><?php echo __('User ID'); ?>:</label><input type="text" name="auth_user" size="30" value="{{LOGINID}}"/>
 	</div>
@@ -10,7 +10,7 @@
 		$selServer = v($_REQUEST['server']);
 		if ( ($serverList !== false && count($serverList) > 1) || (ALLOW_CUSTOM_SERVERS && ALLOW_CUSTOM_SERVER_TYPES)) {
 	?>
-	<div style="display:none">
+	<div>
 		<label><?php echo __('Server'); ?>:</label><select name="server" id="server">
 		<?php
 			foreach($serverList as $server => $host) {
@@ -29,9 +29,9 @@
 		}
 	?>
 	<?php if(ALLOW_CUSTOM_SERVERS): $stypes = explode(',', ALLOW_CUSTOM_SERVER_TYPES); ?>
-	<div id="custom-server">
+	<div id="custom-server" style="display:none">
 		<label><?php echo __('Server Address'); ?>:</label>
-		<input type="text" name="server_name" id="server-name" value="{{SERVER_NAME}}"/>
+		<input type="text" name="server_name" id="server-name" size="30" value="{{SERVER_NAME}}" />
 		<select name="server_type" id="server-type">
 			<?php if(in_array('mysql', $stypes)): ?><option value='mysql'>MySQL</option><?php endif; ?>
 			<?php if(in_array('pgsql', $stypes)): ?><option value='pgsql'>PostgreSQL</option><?php endif; ?>
@@ -57,7 +57,7 @@
 		?>
 		</select>
 	</div>
-	<div style="text-align:right">
+	<div>
 		<input type="submit" value="<?php echo __('Login'); ?>" />
 	</div>
 </div>
